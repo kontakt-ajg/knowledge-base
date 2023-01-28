@@ -1,0 +1,78 @@
+HPE 5710
+
+
+#set terminal length to 0 (user-view)
+screen-length disable
+
+#create vlan (system-view)
+vlan 10
+
+#create vlan interface (system-view)
+interface vlan 10
+
+#set ip on vlan interface (system-view)
+interface vlan 10
+ip address 1.2.3.4 24
+
+#configure access port (system-view)
+interface Ten-GigabitEthernet1/0/1
+port link-type access
+port access vlan 500
+
+#configure trunk port (system-view)
+interface Ten-GigabitEthernet1/0/1
+port link-type trunk
+port trunk permit vlan 10 20
+undo port trunk permit vlan 1
+
+#configure default gateway (system-view)
+ip route-static 0.0.0.0 0 1.2.3.4
+
+#configure edgeport/portfast (system-view)
+interface Ten-GigabitEthernet1/0/1
+stp edged-port
+
+#display device serial number
+display device manuinfo
+
+#change hostname (system-view)
+hostname mycoolswitchname1
+
+#create a local user for SSH and terminal login (system-view)
+local-user admin class manage
+password simple MYCOOLPASSWORD123
+service-type ssh terminal
+authorization-attribute user-role network-admin
+
+#enable password for serial console (system-view)
+line class aux
+authentication-mode password
+set authentication password simple MYCOOLPASSWORD123
+
+#enable username and password for serial console (system-view)
+line class aux
+authentication-mode scheme
+
+#enable SSH (system-view)
+public-key local create rsa
+ssh server enable
+line class vty
+authentication-mode scheme
+
+#backup config to tftp (user-view)
+tftp 1.2.3.4 put flash:/startup.cfg
+
+#restore config from tftp (user-view)
+tftp 1.2.3.4 get flash:/startup.cfg
+
+#enable NTP (system-view)
+clock protocol ntp
+clock timezone JST add 09:00:00
+ntp-service unicast-server 1.2.3.4 source Vlan-interface 500
+ntp-service enable
+
+#set local time (may be needed if local time and ntp are too far off)
+system-view
+clock protocol none
+exit
+clock datetime XX:XX:XX XXXX/XX/XX

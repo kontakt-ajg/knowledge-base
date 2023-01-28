@@ -1,0 +1,9 @@
+Things to do when setting up a switch:
+
+set console password
+set mgmt interface ip
+set hostname
+enable ssh
+port Security
+	Get Mac Addresses from Servers and only allow them on the specific ports.
+disable unused ports

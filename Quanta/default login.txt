@@ -1,0 +1,3 @@
+On modern QuantaMesh switches the default login/ password is:
+Login: admin
+Password: <no password>

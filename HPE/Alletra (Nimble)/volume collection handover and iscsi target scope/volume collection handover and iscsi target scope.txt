@@ -1,0 +1,2 @@
+handing over a volume collection from one a Nimble whos default iscsi target scope is volume to a different Nimble whos default iscsi target scope is group results in the handedover volume to keep its iscsi target scope of volume.
+it seems only newly created volumes are affected by the default iscsi target scope value. a volumes iscsi target scope can be changed through the cli.

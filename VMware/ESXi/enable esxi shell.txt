@@ -1,0 +1,2 @@
+vim-cmd hostsvc/enable_esx_shell
+vim-cmd hostsvc/start_esx_shell

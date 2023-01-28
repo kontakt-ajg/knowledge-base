@@ -1,0 +1,5 @@
+#send i amount of test emails (text file as email body)
+for i in {1..100}; do cat email.txt | $(which mail) -s "test $i" "you@your.domain"; done
+
+#send i amount of test emails  (simple text as email body)
+for i in {1..100}; do echo "hello world" | $(which mail) -s "test $i" "you@your.domain"; done

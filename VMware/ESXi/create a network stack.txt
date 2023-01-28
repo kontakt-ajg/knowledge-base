@@ -1,0 +1,1 @@
+esxcli network ip netstack add --netstack=vmotion

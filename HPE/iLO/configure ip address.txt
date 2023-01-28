@@ -1,0 +1,2 @@
+#set static IP address and mask (reboots after execution)
+set /map1/enetport1/lanendpt1/ipendpt1 IPv4Address=192.168.1.1 SubnetMask=255.255.255.0

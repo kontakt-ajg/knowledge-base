@@ -1,0 +1,5 @@
+# Disable IPv6
+esxcli network ip set --ipv6-enabled=false
+
+# Reboot to apply settings (disabling IPv6)
+esxcli system shutdown reboot -d 15 -r "rebooting after disabling IPv6"

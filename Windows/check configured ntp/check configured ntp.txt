@@ -1,0 +1,2 @@
+#check current ntp server
+w32tm /query /status

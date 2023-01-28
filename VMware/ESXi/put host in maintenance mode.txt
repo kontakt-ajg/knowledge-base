@@ -1,0 +1,2 @@
+# Put host in maintenance mode
+esxcli system maintenanceMode set -e true

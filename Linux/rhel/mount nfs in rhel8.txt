@@ -1,0 +1,32 @@
+mount nfs in rhel8
+
+#install nfs client
+	sudo yum install nfs-utils
+
+#create mount point
+	sudo mkdir /mnt/nfstest/
+
+#check nfs server for exports
+	sudo showmount --exports 1.2.3.4
+
+#mount nfs
+	#nfs version fallback order：　4.2 -> 4.1 -> 4.0 -> 3.0
+	sudo mount -t nfs 1.2.3.4:/ExportNameHere/ /mnt/nfstest/
+
+#test write
+	sudo touch /mnt/nfstest/MyTestFile.txt
+
+#check contents
+	ls /mnt/nfstest/
+
+#delete test file
+	sudo rm MyTestFile.txt
+
+#check contents
+	ls /mnt/nfstest/
+
+#unmount nfs
+	sudo umount /mnt/nfstest/
+
+#delete mount point
+	sudo rm -r /mnt/nfstest/

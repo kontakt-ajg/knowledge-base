@@ -1,0 +1,26 @@
+sudo apt install zfsutils-linux
+
+#pool
+sudo zpool create -f -o ashift=12 -o autoexpand=on -O compression=lz4 -O atime=off -O recordsize=64K -O canmount=off phoenixstor raidz2 scsi-SIBM_ServeRAID_M5120_00051558dd9ff42827d0be480ab00506 scsi-SIBM_ServeRAID_M5120_000bbe58dd9ff42827d0be480ab00506 scsi-SIBM_ServeRAID_M5120_0017d657dd9ff42827d0be480ab00506 scsi-SIBM_ServeRAID_M5120_0026d855dd9ff42827d0be480ab00506 scsi-SIBM_ServeRAID_M5120_00284c58dd9ff42827d0be480ab00506 scsi-SIBM_ServeRAID_M5120_002c7a58dd9ff42827d0be480ab00506
+sudo zpool add -f -o ashift=12 phoenixstor raidz2 scsi-SIBM_ServeRAID_M5120_00307041dd9ef42827d0be480ab00506 scsi-SIBM_ServeRAID_M5120_00344254dd9ff42827d0be480ab00506 scsi-SIBM_ServeRAID_M5120_003a9a47dd9ef42827d0be480ab00506 scsi-SIBM_ServeRAID_M5120_00411b56dd9ff42827d0be480ab00506 scsi-SIBM_ServeRAID_M5120_00486956dd9ff42827d0be480ab00506 scsi-SIBM_ServeRAID_M5120_005e9857dd9ff42827d0be480ab00506
+sudo zpool add -f -o ashift=12 phoenixstor raidz2 scsi-SIBM_ServeRAID_M5120_00721c57dd9ff42827d0be480ab00506 scsi-SIBM_ServeRAID_M5120_0087e458dd9ff42827d0be480ab00506 scsi-SIBM_ServeRAID_M5120_008c7741dd9ef42827d0be480ab00506 scsi-SIBM_ServeRAID_M5120_009fb956dd9ff42827d0be480ab00506 scsi-SIBM_ServeRAID_M5120_00bfa047dd9ef42827d0be480ab00506 scsi-SIBM_ServeRAID_M5120_00c26657dd9ff42827d0be480ab00506
+sudo zpool add -f -o ashift=12 phoenixstor raidz2 scsi-SIBM_ServeRAID_M5120_00c3544edd9ef42827d0be480ab00506 scsi-SIBM_ServeRAID_M5120_00cea455dd9ff42827d0be480ab00506 scsi-SIBM_ServeRAID_M5120_00d45a57dd9ff42827d0be480ab00506 scsi-SIBM_ServeRAID_M5120_00f19756dd9ff42827d0be480ab00506 scsi-SIBM_ServeRAID_M5120_00f5c855dd9ff42827d0be480ab00506 scsi-SIBM_ServeRAID_M5120_00fae656dd9ff42827d0be480ab00506
+
+
+#log
+ ls -lh /dev/disk/by-id/
+sudo zpool add -f phoenixstor log mirror scsi-SLSI_MR9260-8i_00e1f2c741aedb2b27c0388802b00506 scsi-SLSI_MR9260-8i_002341c841aedb2b27c0388802b00506
+#cache
+ ls -lh /dev/disk/by-id/
+sudo zpool add -f -o ashift=12 phoenixstor cache scsi-SLSI_MR9260-8i_00fb5ae81ea54d3b27c0388802b00506 scsi-SLSI_MR9260-8i_003fa9e81ea54d3b27c0388802b00506 scsi-SLSI_MR9260-8i_006a4c01343ce52327c0388802b00506 scsi-SLSI_MR9260-8i_009e9b01343ce52327c0388802b00506 scsi-SLSI_MR9260-8i_00263a02343ce52327c0388802b00506 scsi-SLSI_MR9260-8i_00edea01343ce52327c0388802b00506
+ 
+#mount
+sudo zfs create -o mountpoint=/mnt/default phoenixstor/default
+
+#share
+sudo apt install nfs-kernel-server
+sudo chown nobody:nogroup /mnt/default
+sudo zfs set sharenfs="on" phoenixstor/default
+sudo zfs set sharenfs="rw=@192.168.1.1/24" phoenixstor/default
+
+sudo zfs set sync=disabled phoenixstor

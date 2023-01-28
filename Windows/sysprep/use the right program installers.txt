@@ -1,0 +1,2 @@
+#VDI
+When creating a master image, make sure to use the correct installers for software (e.g. Teams, Zoom). As installs to user directoties will get wiped upon sysprep.

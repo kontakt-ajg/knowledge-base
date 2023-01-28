@@ -1,0 +1,1 @@
+Add-Computer -DomainName "domain.tld" -OUPath "OU=myComputers,DC=domain,DC=tld" -Restart -Force

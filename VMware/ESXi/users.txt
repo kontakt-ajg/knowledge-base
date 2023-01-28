@@ -1,0 +1,4 @@
+#Users
+While it is possible to disable the root user it is not recommended.
+Disabling the root user will result in errors in the vCenter event log.
+It is better to set the privileges of the ESXi root user to read-only.

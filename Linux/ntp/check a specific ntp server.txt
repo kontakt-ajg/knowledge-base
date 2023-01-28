@@ -1,0 +1,1 @@
+ntpq -p ntp.ubuntu.com

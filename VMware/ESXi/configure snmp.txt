@@ -1,0 +1,23 @@
+# set system location
+esxcli system snmp set --syslocation "My Street, 123"
+
+# set system contact
+esxcli system snmp set --syscontact me@mydomain.tld
+
+# set target SNMP manager
+esxcli system snmp set --targets=1.2.3.4@162/mycommunity
+
+#configure snmp community (for read?)
+esxcli system snmp set --communities mycommunity
+
+# enable SNMP
+esxcli system snmp set --enable true
+
+# disable SNMP
+esxcli system snmp set --disable true
+
+# restart SNMP agent
+/etc/init.d/snmpd restart
+
+# reset SNMP settings
+esxcli system snmp set –r

@@ -1,0 +1,1 @@
+esxcli network vswitch standard portgroup set --portgroup-name=VLAN80 --vlan-id=80

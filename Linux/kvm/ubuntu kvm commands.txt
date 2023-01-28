@@ -1,0 +1,17 @@
+#Create Ubuntu VM
+sudo virt-install --virt-type kvm -n Ubuntu20.04-TestGuest --description "KVM Test" --os-type=linux --os-variant="ubuntu20.04" --ram=4096 --vcpus=4 --disk path=/var/lib/libvirt/images/Ubuntu20.04-TestGuest.img,bus=virtio,size=20,format=raw --network bridge:br0 --graphics vnc,port=5901,listen=0.0.0.0,keymap=ja,password=P@ssw0rd --noautoconsole --cdrom /tmp/ubuntu-20.04.3-live-server-amd64.iso
+
+#List VMs (Domains)
+sudo virsh list --all
+
+#Send ACPI Shutdown to VM
+sudo virsh shutdown guest_001
+
+#Delete a VM (Disk doesnt get deleted)
+sudo virsh destroy ubuntu1
+
+#List VNC Port of a VM (output of :1 corresponds to port 5901)
+sudo virsh vncdisplay centos
+
+#Start VM
+sudo virsh start guest1

@@ -1,0 +1,1 @@
+nslookup somewhere.com some.dns.server

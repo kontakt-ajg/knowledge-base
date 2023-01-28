@@ -1,0 +1,8 @@
+1. SSH into Alletra
+2. execute the command below
+
+vol=$(vol --list | awk '{print $1}'); for i in ${vol[*]}; do echo "$i,$( vol --info $i | grep Serial | sed 's/Serial number: //')"; done
+
+
+datastore_name,serial_number
+myTest-123,12345678901234567890123456789012

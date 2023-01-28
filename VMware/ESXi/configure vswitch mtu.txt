@@ -1,0 +1,2 @@
+# Set vSwitch MTU's
+esxcli network vswitch standard set -v vSwitch1 -m 9000

@@ -1,0 +1,2 @@
+#check specific ntp server
+w32tm /stripchart /computer:192.168.1.1 /dataonly /samples:10

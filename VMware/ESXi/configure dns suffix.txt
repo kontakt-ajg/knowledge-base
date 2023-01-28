@@ -1,0 +1,2 @@
+# Set DNS Suffix
+esxcli network ip dns search add --domain=my.lab

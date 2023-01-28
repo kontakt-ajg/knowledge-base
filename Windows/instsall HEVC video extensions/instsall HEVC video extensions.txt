@@ -1,0 +1,1 @@
+winget install 9N4WGH0Z6VHQ --source msstore --accept-package-agreements --accept-source-agreements

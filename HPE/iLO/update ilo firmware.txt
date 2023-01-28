@@ -1,0 +1,2 @@
+#update iLO firmware
+load /map1/firmware1 -source http://192.168.1.2/images/fw/iLO5_110.bin

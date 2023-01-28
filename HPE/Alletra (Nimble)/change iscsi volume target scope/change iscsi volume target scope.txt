@@ -1,0 +1,3 @@
+vol --edit "Share-Shinjuku" --iscsi_target_scope volume
+OR
+vol --edit "Share-Shinjuku" --iscsi_target_scope group

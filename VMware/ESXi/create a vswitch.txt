@@ -1,0 +1,2 @@
+# Create vSwitch
+esxcli network vswitch standard add -v vSwitch1

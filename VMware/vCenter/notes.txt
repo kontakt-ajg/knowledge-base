@@ -1,0 +1,37 @@
+#Install
+Usable with just IP address or with FQDN+DNS
+put in ip address as fqdn if ip only  install
+
+
+#Affinity
+Controls which VMs should / must boot on a particular ESXi host
+for automated moving back after recovery of failed host you need to set "completely automatic" in the DRS automation level. if it isnt "completely" the vms dont move back after failed host recovers.
+if it is only "partitially automatic", on power up it automatically moves to vms to the hosts according to the rules. if it is only "manual" the user is asked upon vm power up where to put the vms.
+setup: create vm group, create host group, create vm-to-host group, enable DRS, set DRS automation level to fully automatic, set DRS threshhold value to 1
+
+
+#Certificate
+You can create a CSR that gets signed by a CA, then import the created certificate into vCenter
+Q：What happens if the machine certificate expires?
+	vCenter WebUI on port 443 becomes unaccessible (HTTP Status 500 Internal Server Error)
+	vCenter WebUI on port 5480 still works (reports no errors)
+	Fixable by pointing vCenter and the client machine that accesses it to an NTP that reports a time in the past where the certificate was still valid and renewing the certificate through the vCenter WebUI on port 443.
+
+#License
+For High core count ESXi hosts license keys need to be combined in order to apply them (e.g. combine 4 x 16 core license for a 64 core server)
+
+#Users
+It is possible to disable the root user (not recommended)
+
+#Alarms
+Can be configured to alert you in case of low available storage, high cpu usage etc.
+When triggered you can be notified through SMTP (mail) or SNMP (traps)
+
+
+#Host Profiles
+Maintenance mode is needed to apply a host profile to a host
+Change settings on one host, create a new host profile and then apply said profile to other hosts
+Keep settings in a host profile to a minimum
+
+#Authentication
+Can be connected to Active Directory (AD) server

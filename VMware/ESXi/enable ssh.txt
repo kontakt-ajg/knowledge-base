@@ -1,0 +1,3 @@
+# Enable SSH
+vim-cmd hostsvc/enable_ssh
+vim-cmd hostsvc/start_ssh

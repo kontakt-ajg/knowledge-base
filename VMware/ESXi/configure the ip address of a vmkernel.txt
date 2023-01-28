@@ -1,0 +1,1 @@
+esxcli network ip interface ipv4 set --interface-name=vmk1 --ipv4=1.2.3.4 --netmask=255.255.255.0 --type=static

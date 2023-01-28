@@ -1,0 +1,2 @@
+#show snmp settings
+esxcli system snmp get

@@ -1,0 +1,8 @@
+### vcenter machine certificate expired?
+
+1. ssh into vcenter
+2. run the following
+/usr/lib/vmware-vmca/bin/certificate-manager
+3. choose option 3 to renew machine ssl certificate
+4. wait for services to be restarted (it may take a long time)
+5. if it fails, reboot vcenter and try again.

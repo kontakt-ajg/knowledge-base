@@ -1,0 +1,1 @@
+esxcli system hostname set --fqdn=hostname.my.lab

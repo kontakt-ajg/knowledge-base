@@ -1,0 +1,5 @@
+#PortProxy
+Redirect local port to port on a remote IP (localhost:1234 to 10.X.X.X:56789)
+useful when website tries to redirect to localhost for some reason
+IPv4: netsh interface portproxy add v4tov4 listenport=1234 listenaddress=127.0.0.1 connectport=56789 connectaddress=10.X.X.X
+IPv6 netsh interface portproxy add v6tov4 listenport=1234 listenaddress=::1 connectport=56789 connectaddress=10.X.X.X

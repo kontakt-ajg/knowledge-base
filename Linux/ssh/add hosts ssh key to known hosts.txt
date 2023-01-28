@@ -1,0 +1,2 @@
+#add hosts ssh key to known hosts
+ssh-keyscan -H 1.2.3.4 >> ~/.ssh/known_hosts

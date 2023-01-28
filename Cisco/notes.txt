@@ -1,0 +1,17 @@
+Switches
+	Interfaces
+		enter interface configuration mode
+			switch(config-if)# interface ethernet 1/1
+		configure speed
+			switch(config-if)# speed 1000
+		configure duplex
+			switch(config-if)# duplex full
+		enable interface
+			switch(config-if)# no shutdown
+	config
+		show the current config (in-memory)
+			switch> show running-config
+		show the saved config (on-disk)
+			switch> show startup-config
+		show detailed information about the system (usually for technical support)
+			switch> show tech-support

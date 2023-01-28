@@ -1,0 +1,2 @@
+#set default gateway (reboots after execution)
+set /map1/gateway1 AccessInfo=192.168.1.1

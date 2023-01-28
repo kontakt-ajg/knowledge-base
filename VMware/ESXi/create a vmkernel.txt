@@ -1,0 +1,4 @@
+# Create VMKernel Ports
+esxcli network ip interface add --interface-name=vmk1 --portgroup-name=NFS --mtu=9000
+
+esxcli network ip interface add --interface-name=vmk2 --portgroup-name=vMotion --netstack=vmotion --mtu=9000

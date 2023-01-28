@@ -1,0 +1,3 @@
+# Add Additional NIC to vSwitches
+esxcli network vswitch standard uplink add --uplink-name=vmnic1 --vswitch-name=vSwitch1
+esxcli network vswitch standard uplink add --uplink-name=vmnic2 --vswitch-name=vSwitch1

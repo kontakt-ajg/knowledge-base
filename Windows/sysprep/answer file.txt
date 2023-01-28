@@ -1,0 +1,3 @@
+#answer file
+	Settings like enabling RDP and opening the required ports can be applied during OOBE
+	Execute a powershell script at the end that read in the VM name (through VMware Tools) and sets the hostname and IP Address accordingly

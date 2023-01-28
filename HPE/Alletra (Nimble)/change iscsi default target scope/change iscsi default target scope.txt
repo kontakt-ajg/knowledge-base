@@ -1,0 +1,3 @@
+group --edit --default_iscsi_target_scope volume
+OR
+group --edit --default_iscsi_target_scope group

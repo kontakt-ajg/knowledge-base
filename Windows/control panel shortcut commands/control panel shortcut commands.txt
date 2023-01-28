@@ -1,0 +1,5 @@
+# open nic settings
+ncpa.cpl
+
+# open hostname / rdp allow settings
+sysdm.cpl

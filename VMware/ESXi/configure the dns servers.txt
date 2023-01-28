@@ -1,0 +1,2 @@
+esxcli network ip dns server add --server=1.1.1.1
+esxcli network ip dns server add --server=2.2.2.2

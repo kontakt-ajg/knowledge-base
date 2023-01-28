@@ -1,0 +1,18 @@
+World Wide Names (WWN)
+	2 Types
+		World Wide Node Names (WWNN)
+			identify an HBA Adapter
+		World Wide Port Name (WWPN)
+			identify the inidividual ports on an HBA adapter
+			equivalent of MAC addresses in Ethernet
+
+Aliases
+	can be used to make configuration and troubleshooting easier
+	you can create an alias for WWPNs (e.g. ESXI1-1 for some WWPN)
+
+How to export a volume (LUN) to a server
+	1. Cable everything up
+	2. Create LUN on Storage
+	3. Export LUN to WWPNs of Servers (called Initiators)
+	4. Add WWPNs of Storage (called Targets) on the Servers
+	5. On the Switches create a Zone which includes WWPNs of Storage and Server (so they are allowed to talk to each other) 

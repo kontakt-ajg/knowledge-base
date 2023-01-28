@@ -1,0 +1,2 @@
+#set alertmail (NOT SURE IF IT WORKS)
+set /map1/oemHPE_alertmail1 oemHPE_alertmail_email= oemHPE_alertmail_sender_domain=sender@domain.tld oemHPE_alertmail_smtp_server=1.2.3.4 oemHPE_alertmail_smtp_port=25 oemHPE_alertmail_smtp_secure_enable=yes oemHPE_alertmail_smtp_auth_enable=yes oemHPE_alertmail_smtp_auth_username=sender@domain.tld oemHPE_alertmail_smtp_auth_password=mypassword oemHPE_alertmail_enable=yes

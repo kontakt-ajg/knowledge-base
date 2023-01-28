@@ -1,0 +1,7 @@
+# sudo log (centos/redhat)
+/var/log/secure
+/var/log/audit/audit.log
+journalctl -e
+
+# sudo log (debian/ubuntu)
+/var/log/auth.log

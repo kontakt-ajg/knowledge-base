@@ -1,0 +1,2 @@
+#check snmp destinations and communites
+snmp.get

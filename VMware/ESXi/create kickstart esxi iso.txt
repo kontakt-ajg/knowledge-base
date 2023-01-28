@@ -1,0 +1,10 @@
+#https://github.com/fgrehl/virten-scripts/tree/master/bash/esxi_ks_injector
+
+./esxi_customks_iso.sh -i "VMware-VMvisor-Installer-7.0U3-18644231.x86_64.iso" \
+-k KS-TEMPLATE.CFG \
+-a 192.168.1.1 \
+-m 255.255.255.0 \
+-g 192.168.1.254 \
+-n esxi1.my.lab \
+-v 0 \
+-d "1.1.1.1,8.8.8.8"

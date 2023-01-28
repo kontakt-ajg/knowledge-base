@@ -1,0 +1,2 @@
+#Lockdown Mode
+Enabling it will result in the root user no longer being able to log in to the ESXi WebUI.

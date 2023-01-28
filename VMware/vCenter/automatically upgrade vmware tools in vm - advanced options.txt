@@ -1,0 +1,8 @@
+#Microsoft Windows Guest Operating Systems (with reboot)
+/s /v "/qn"
+
+#Microsoft Windows Guest Operating Systems (without reboot)
+/s /v "/qn REBOOT=ReallySuppress"
+
+#Linux Guest Operating Systems (use defaults. no user input needed)
+--default

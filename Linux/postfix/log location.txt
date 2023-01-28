@@ -1,0 +1,2 @@
+#postfix log location
+/var/log/maillog

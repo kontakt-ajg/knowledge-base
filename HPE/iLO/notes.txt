@@ -1,0 +1,13 @@
+#Firmware
+Can be updated through SPP (Service Pack for ProLiant)
+
+
+#Update
+iLO Firmware (e.g. ilo5_265.bin)
+	Flashable through WebUI (Firmware & OS Software > Firmware > Update Firmware)
+System ROM (e.g. U32_2.64_04_21_2022.fwpkg)
+	Flashable through WebUI (Firmware & OS Software > Firmware > Update Firmware)
+Other (e.g. SPP)
+	Boot into SPP iso and update with Smart Update Manager (SUM)
+	SPP can include a software package versions that are older than the currently installed versions!
+	However, older versions will not be installed automatically

@@ -1,0 +1,2 @@
+#send snmp test trap
+esxcli system snmp test

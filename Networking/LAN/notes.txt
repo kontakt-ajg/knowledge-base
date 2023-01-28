@@ -1,0 +1,2 @@
+#Switches
+When setting the MTU on ESXi host vmk interfaces to 9000 the switch may need to be configured with an MTU higher than that (e.g. 9216)

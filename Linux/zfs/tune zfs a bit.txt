@@ -1,0 +1,12 @@
+vfs.zfs.l2arc_write_max 83886080
+vfs.zfs.l2arc_write_boost 83886080
+vfs.zfs.l2arc_noprefetch 0
+vfs.zfs.arc_max 75161927680
+vfs.zfs.l2arc_norw 0
+
+
+echo 'options zfs zfs_arc_max=75161927680' > /etc/modprobe.d/zfs.conf
+echo 'options zfs l2arc_write_max=83886080' > /etc/modprobe.d/zfs.conf
+echo 'options zfs l2arc_write_boost=83886080' > /etc/modprobe.d/zfs.conf
+echo 'options zfs l2arc_noprefetch=1' > /etc/modprobe.d/zfs.conf
+echo 'options zfs l2arc_norw=0' > /etc/modprobe.d/zfs.conf

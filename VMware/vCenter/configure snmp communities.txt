@@ -1,0 +1,2 @@
+#configure communities (read)
+snmp.set --communities mycommunity1,mycommunity2

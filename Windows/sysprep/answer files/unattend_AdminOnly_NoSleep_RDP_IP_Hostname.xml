@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unattend xmlns="urn:schemas-microsoft-com:unattend">
+    <settings pass="oobeSystem">
+        <component name="Microsoft-Windows-International-Core" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <InputLocale>ja-JP</InputLocale>
+            <SystemLocale>ja-JP</SystemLocale>
+            <UILanguage>ja-JP</UILanguage>
+            <UILanguageFallback></UILanguageFallback>
+            <UserLocale>ja-JP</UserLocale>
+        </component>
+        <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <AutoLogon>
+                <Password>
+                    <Value>TgB0AHQAZABmAGMAQAB2AGQAaQA2AGgAUABhAHMAcwB3AG8AcgBkAA==</Value>
+                    <PlainText>false</PlainText>
+                </Password>
+                <Username>Administrator</Username>
+                <Enabled>true</Enabled>
+                <LogonCount>3</LogonCount>
+            </AutoLogon>
+            <DesktopOptimization>
+                <ShowWindowsStoreAppsOnTaskbar>false</ShowWindowsStoreAppsOnTaskbar>
+                <GoToDesktopOnSignIn>true</GoToDesktopOnSignIn>
+            </DesktopOptimization>
+            <OOBE>
+                <HideEULAPage>true</HideEULAPage>
+                <HideLocalAccountScreen>true</HideLocalAccountScreen>
+                <HideOEMRegistrationScreen>true</HideOEMRegistrationScreen>
+                <HideOnlineAccountScreens>true</HideOnlineAccountScreens>
+                <HideWirelessSetupInOOBE>true</HideWirelessSetupInOOBE>
+                <ProtectYourPC>3</ProtectYourPC>
+                <SkipMachineOOBE>true</SkipMachineOOBE>
+                <SkipUserOOBE>true</SkipUserOOBE>
+            </OOBE>
+            <UserAccounts>
+                <AdministratorPassword>
+                    <Value>TgB0AHQAZABmAGMAQAB2AGQAaQA2AGgAQQBkAG0AaQBuAGkAcwB0AHIAYQB0AG8AcgBQAGEAcwBzAHcAbwByAGQA</Value>
+                    <PlainText>false</PlainText>
+                </AdministratorPassword>
+            </UserAccounts>
+            <FirstLogonCommands>
+                <SynchronousCommand wcm:action="add">
+                    <RequiresUserInput>false</RequiresUserInput>
+                    <CommandLine>powershell.exe &quot;powercfg.exe -change -monitor-timeout-ac 0&quot;</CommandLine>
+                    <Order>1</Order>
+                    <Description>Disable Sleep</Description>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <RequiresUserInput>false</RequiresUserInput>
+                    <CommandLine>powershell.exe &quot;powercfg.exe -change -standby-timeout-dc 0&quot;</CommandLine>
+                    <Order>4</Order>
+                    <Description>Disable Sleep</Description>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <RequiresUserInput>false</RequiresUserInput>
+                    <Order>3</Order>
+                    <CommandLine>powershell.exe &quot;powercfg.exe -change -standby-timeout-ac 0&quot;</CommandLine>
+                    <Description>Disable Sleep</Description>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <CommandLine>powershell.exe &quot;powercfg.exe -change -monitor-timeout-dc 0&quot;</CommandLine>
+                    <Order>2</Order>
+                    <RequiresUserInput>false</RequiresUserInput>
+                    <Description>Disable Sleep</Description>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <CommandLine>powershell.exe &quot;Enable-NetFirewallRule -Name &quot;&quot;RemoteDesktop-UserMode-In-UDP&quot;&quot;&quot;</CommandLine>
+                    <Order>6</Order>
+                    <Description>Allow RDP</Description>
+                    <RequiresUserInput>false</RequiresUserInput>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <Order>7</Order>
+                    <CommandLine>powershell.exe &quot;Enable-NetFirewallRule -Name &quot;&quot;RemoteDesktop-UserMode-In-TCP&quot;&quot;&quot;</CommandLine>
+                    <RequiresUserInput>false</RequiresUserInput>
+                    <Description>Allow RDP</Description>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <RequiresUserInput>false</RequiresUserInput>
+                    <Order>8</Order>
+                    <Description>Allow RDP</Description>
+                    <CommandLine>powershell.exe &quot;Enable-NetFirewallRule -Name &quot;&quot;RemoteDesktop-Shadow-In-TCP&quot;&quot;&quot;</CommandLine>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <CommandLine>powershell.exe -ExecutionPolicy Bypass -NoProfile -WindowStyle Hidden -File C:\TODO\0SetHostnameIP.ps1</CommandLine>
+                    <Description>Set IP Address and Hostname</Description>
+                    <Order>9</Order>
+                    <RequiresUserInput>false</RequiresUserInput>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <Order>5</Order>
+                    <Description>Disable Sleep</Description>
+                    <CommandLine>powershell.exe &quot;powercfg.exe /hibernate off&quot;</CommandLine>
+                    <RequiresUserInput>false</RequiresUserInput>
+                </SynchronousCommand>
+            </FirstLogonCommands>
+        </component>
+    </settings>
+    <settings pass="specialize">
+        <component name="Microsoft-Windows-TerminalServices-LocalSessionManager" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <fDenyTSConnections>false</fDenyTSConnections>
+        </component>
+    </settings>
+    <cpi:offlineImage cpi:source="wim:c:/users/alex/desktop/windows%2010%2020h2.7%20x64/sources/install.wim#Windows 10 Pro for Workstations" xmlns:cpi="urn:schemas-microsoft-com:cpi" />
+</unattend>

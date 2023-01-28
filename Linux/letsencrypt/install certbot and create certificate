@@ -1,0 +1,4 @@
+sudo apt update
+sudo apt upgrade
+sudo apt install certbot
+sudo certbot certonly --standalone --preferred-challenges http -d mydomain.tld

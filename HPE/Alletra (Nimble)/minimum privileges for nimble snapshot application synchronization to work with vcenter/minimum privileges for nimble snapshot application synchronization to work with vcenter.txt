@@ -1,0 +1,49 @@
+minimum privileges for nimble snapshot application synchronization to work with vcenter
+
+Privileges for NPM (Volume Collection Backups)
+
+“VirtualMachine.State.CreateSnapshot”,
+
+“VirtualMachine.State.RemoveSnapshot”
+
+If you try “Validate” on the vCenter Sync VolColl, it will check these permissions on all the VMs in the datastores of that VolColl.
+
+Privileges for vCenter Plugin
+
+"Datastore.AllocateSpace",
+
+"Datastore.Config",
+
+"Datastore.Delete",
+
+"Datastore.Move",
+
+"Datastore.Rename",
+
+"Extension.Update",
+
+"Global.CancelTask",
+
+"Host.Config.AdvancedConfig",
+
+"Host.Config.NetService",
+
+"Host.Config.Settings",
+
+"Host.Config.Storage",
+
+"StoragePod.Config",
+
+"System.Anonymous",
+
+"System.Read",
+
+"System.View",
+
+"Task.Create",
+
+"Task.Update"
+
+Along with these, we also expect the privileges in the “NimbleStorage” group should be included in any custom role the user creates.
+
+We tested it against Commvault Intellisnap requirements originally which failed. We removed all Nimble permissions, Verified Commvault Intellisnap permissions and it worked fine. The issue with OUR environment is that within Nimble protection configuration, we had to use <DOMAIN>/username for the user to integrate with Vmware. We may encounter issues in the future for not using all the permissions from Nimble vs. Commvault (there are differences) but at this rate, we have it working.
